@@ -1,6 +1,6 @@
 {
     "name":"netzmacht/contao-leaflet-libraries",
-    "description":"Javascript libraries for the Leaflet integration for Contao",
+    "description":"Javascript libraries for the Leaflet maps integration for Contao",
     "keywords":["contao", "maps", "leaflet"],
     "type":"contao-module",
     "license":"LGPL-3.0+",
@@ -20,6 +20,9 @@
     "require":{
         "php":">=5.4",
         "contao/core":">=3.2,<3.5-dev"
+    },
+    "suggest": {
+        "netzmacht/contao-leaflet-maps": "Leaflet maps integration into Contao CMS"
     },
     "extra":{
         "branch-alias": {
