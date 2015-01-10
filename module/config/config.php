@@ -42,15 +42,24 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-ajax'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-ajax/leaflet.ajax.min.js'
 );
 
-
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
 (
     'name'       => 'Leaflet.loading',
-    'version'    => '0.1.13 ',
+    'version'    => '0.1.13',
     'license'    => '<a href="https://github.com/ebrelsford/Leaflet.loading/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/ebrelsford/Leaflet.loading',
     'css'        => 'assets/leaflet/libs/leaflet-loading/Control.Loading.css',
     'javascript' => 'assets/leaflet/libs/leaflet-loading/Control.Loading.js'
+);
+
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocode'] = array
+(
+    'name'       => 'Leaflet Control Geocoder',
+    'version'    => '1.0.0',
+    'license'    => '<a href="https://github.com/perliedman/leaflet-control-geocoder/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
+    'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
+    'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.css',
+    'javascript' => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['spin.js'] = array
