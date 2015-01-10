@@ -1,0 +1,35 @@
+{
+    "name":"netzmacht/contao-leaflet-libraries",
+    "description":"Javascript libraries for the Leaflet integration for Contao",
+    "keywords":["contao", "maps", "leaflet"],
+    "type":"contao-module",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"David Molineus",
+            "email":"mail@netzmacht.de",
+            "homepage":"http://www.netzmacht.de",
+            "role":"Project leader"
+        }
+    ],
+    "support":{
+        "email":"mail@netzmacht.de",
+        "issues":"https://github.com/netzmacht/contao-leaflet-libraries/issues",
+        "source":"https://github.com/netzmacht/contao-leaflet-libraries"
+    },
+    "require":{
+        "php":">=5.4",
+        "contao/core":">=3.2,<3.5-dev"
+    },
+    "extra":{
+        "branch-alias": {
+            "dev-master": "0.7.3.x-dev"
+        },
+        "contao": {
+            "sources":{
+                "module": "system/modules/leaflet-libs",
+                "assets": "assets/leaflet/libs"
+            }
+        }
+    }
+}
