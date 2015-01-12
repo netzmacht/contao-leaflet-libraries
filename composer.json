@@ -32,6 +32,12 @@
             "sources":{
                 "module": "system/modules/leaflet-libs",
                 "assets": "assets/leaflet/libs"
+            },
+            "transifex": {
+                "project": "contao-leaflet-maps",
+                "prefix": "libraries-",
+                "languages_cto": "module/languages",
+                "languages_tx": ".tx"
             }
         }
     }
