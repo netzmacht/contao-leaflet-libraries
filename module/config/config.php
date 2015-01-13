@@ -33,6 +33,15 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-providers/leaflet-providers.js'
 );
 
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
+(
+    'name'       => 'Leaflet-omnivore',
+    'version'    => '0.3.2',
+    'license'    => '<a href="https://github.com/mapbox/leaflet-omnivore/blob/master/LICENSE" target="_blank">BSD</a>',
+    'homepage'   => 'https://github.com/mapbox/leaflet-omnivore',
+    'javascript' => 'assets/leaflet/libs/leaflet-omnivore/leaflet-omnivore.min.js'
+);
+
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-ajax'] = array
 (
     'name'       => 'Leaflet-ajax',
