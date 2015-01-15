@@ -42,15 +42,6 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-omnivore/leaflet-omnivore.min.js'
 );
 
-$GLOBALS['LEAFLET_LIBRARIES']['leaflet-ajax'] = array
-(
-    'name'       => 'Leaflet-ajax',
-    'version'    => '1.1.0',
-    'license'    => '<a href="https://github.com/calvinmetcalf/leaflet-ajax/blob/master/license.md" target="_blank">MIT</a>',
-    'homepage'   => 'https://github.com/calvinmetcalf/leaflet-ajax',
-    'javascript' => 'assets/leaflet/libs/leaflet-ajax/leaflet.ajax.min.js'
-);
-
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
 (
     'name'       => 'Leaflet.loading',
