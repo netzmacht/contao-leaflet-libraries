@@ -27,8 +27,8 @@ var paths = [
     },
     {
         dest: 'assets/leaflet-fullscreen',
-        css:  'Control.FullScreen.min.css',
-        js:   'Control.FullScreen.min.js'
+        css:  'Control.FullScreen.css',
+        js:   'Control.FullScreen.js'
     }
 ];
 
