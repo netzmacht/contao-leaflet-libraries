@@ -1,6 +1,7 @@
 /vendor/
 /bin/
 /.tx/
+/node_modules/
 
 coverage.xml
 
