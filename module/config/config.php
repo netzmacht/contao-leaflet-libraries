@@ -20,7 +20,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet'] = array
     'version'    => '0.7.3',
     'license'    => '<a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leafletjs.com',
-    'css'        => 'assets/leaflet/libs/leaflet/leaflet.css',
+    'css'        => 'assets/leaflet/libs/leaflet/leaflet.min.css',
     'javascript' => 'assets/leaflet/libs/leaflet/leaflet.js',
 );
 
@@ -30,7 +30,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
     'version'    => '1.0.12',
     'license'    => '<a href="https://github.com/leaflet-extras/leaflet-providers/blob/master/license.md" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leaflet-extras.github.io/leaflet-providers',
-    'javascript' => 'assets/leaflet/libs/leaflet-providers/leaflet-providers.js'
+    'javascript' => 'assets/leaflet/libs/leaflet-providers/leaflet-providers.min.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
@@ -48,8 +48,8 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
     'version'    => '0.1.13',
     'license'    => '<a href="https://github.com/ebrelsford/Leaflet.loading/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/ebrelsford/Leaflet.loading',
-    'css'        => 'assets/leaflet/libs/leaflet-loading/Control.Loading.css',
-    'javascript' => 'assets/leaflet/libs/leaflet-loading/Control.Loading.js'
+    'css'        => 'assets/leaflet/libs/leaflet-loading/Control.Loading.min.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-loading/Control.Loading.min.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocode'] = array
@@ -58,8 +58,8 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocode'] = array
     'version'    => '1.0.0',
     'license'    => '<a href="https://github.com/perliedman/leaflet-control-geocoder/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
-    'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.css',
-    'javascript' => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.js'
+    'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.css',
+    'javascript' => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['spin.js'] = array
