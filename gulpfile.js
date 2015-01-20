@@ -24,6 +24,11 @@ var paths = [
     {
         dest: 'assets/leaflet',
         css:  'leaflet.css'
+    },
+    {
+        dest: 'assets/leaflet-fullscreen',
+        css:  'Control.FullScreen.min.css',
+        js:   'Control.FullScreen.min.js'
     }
 ];
 

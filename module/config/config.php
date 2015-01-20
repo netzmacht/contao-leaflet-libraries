@@ -52,6 +52,16 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-loading/Control.Loading.min.js'
 );
 
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
+(
+    'name'       => 'Leaflet.Control.FullScreen',
+    'version'    => '1.1.4',
+    'license'    => '<a href="https://github.com/brunob/leaflet.fullscreen/blob/master/LICENSE" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/brunob/leaflet.fullscreen',
+    'css'        => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.js'
+);
+
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocode'] = array
 (
     'name'       => 'Leaflet Control Geocoder',
