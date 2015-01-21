@@ -42,6 +42,16 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-omnivore/leaflet-omnivore.min.js'
 );
 
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
+(
+    'name'       => 'Leaflet.markercluster',
+    'version'    => '0.4.0',
+    'license'    => '<a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/Leaflet/Leaflet.markercluster',
+    'css'        => 'assets/leaflet/libs/leaflet-markercluster/MarkerCluster.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-markercluster/leaflet.markercluster.js'
+);
+
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
 (
     'name'       => 'Leaflet.loading',
