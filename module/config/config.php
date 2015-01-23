@@ -55,7 +55,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
 (
     'name'       => 'Leaflet.loading',
-    'version'    => '0.1.14',
+    'version'    => '0.1.15',
     'license'    => '<a href="https://github.com/ebrelsford/Leaflet.loading/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/ebrelsford/Leaflet.loading',
     'css'        => 'assets/leaflet/libs/leaflet-loading/Control.Loading.min.css',
