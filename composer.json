@@ -19,7 +19,7 @@
     },
     "require":{
         "php":">=5.4",
-        "contao/core":">=3.2,<3.5-dev"
+        "contao/core":">=3.2,<3.6-dev"
     },
     "suggest": {
         "netzmacht/contao-leaflet-maps": "Leaflet maps integration into Contao CMS"
