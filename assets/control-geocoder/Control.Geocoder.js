@@ -323,7 +323,7 @@
 
 				if (a.city || a.town || a.village) {
 					parts.push('<span class="' + (parts.length > 0 ? 'leaflet-control-geocoder-address-detail' : '') +
-						'">{postcode} {city}{town}{village}</span>');
+						'">{postcode} {city} {town} {village}</span>');
 				}
 
 				if (a.state || a.country) {
@@ -618,6 +618,10 @@
 
 					cb.call(context, results);
 			});
+		},
+
+		suggest: function(query, cb, context) {
+			return this.geocode(query, cb, context);
 		},
 
 		reverse: function(location, scale, cb, context) {

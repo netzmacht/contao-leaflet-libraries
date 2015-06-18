@@ -72,10 +72,10 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.js'
 );
 
-$GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocode'] = array
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 (
     'name'       => 'Leaflet Control Geocoder',
-    'version'    => '1.0.0',
+    'version'    => '1.1.0',
     'license'    => '<a href="https://github.com/perliedman/leaflet-control-geocoder/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
     'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.css',
