@@ -27,7 +27,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
 (
     'name'       => 'Leaflet-providers',
-    'version'    => '1.0.12',
+    'version'    => '1.1.0',
     'license'    => '<a href="https://github.com/leaflet-extras/leaflet-providers/blob/master/license.md" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leaflet-extras.github.io/leaflet-providers',
     'javascript' => 'assets/leaflet/libs/leaflet-providers/leaflet-providers.min.js'
