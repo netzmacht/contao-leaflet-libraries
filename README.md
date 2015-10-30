@@ -16,7 +16,7 @@ This package contains following packages:
  - [Leaflet-providers 1.1.5](http://leaflet-extras.github.io/leaflet-providers)
  - [Leaflet.markercluster 0.4.0](https://github.com/Leaflet/Leaflet.markercluster)
  - [Leaflet-omnivore 0.3.2](https://github.com/mapbox/leaflet-omnivore)
- - [Leaflet.loading 0.1.15](https://github.com/ebrelsford/Leaflet.loading)
+ - [Leaflet.loading 0.1.16](https://github.com/ebrelsford/Leaflet.loading)
  - [Leaflet.Control.FullScreen 1.1.4](https://github.com/brunob/leaflet.fullscreen)
  - [Leaflet Control Geocoder 1.0.0](https://github.com/perliedman/leaflet-control-geocoder)
  - [spin.js 2.0.2](http://fgnass.github.io/spin.js)
