@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<!-- Leaflet style. REQUIRED! -->
-	<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
 	<style>
 		html { height: 100% }
 		body { height: 100%; margin: 0; padding: 0;}
@@ -26,7 +26,7 @@
 	</div>
 	<div id="map" class="map"></div>
 
-	<script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet-src.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
 	<script src="leaflet-providers.js"></script>
 	<script>
 		var map = L.map('map', {
@@ -48,7 +48,7 @@
 			'Hydda Full': L.tileLayer.provider('Hydda.Full'),
 			'MapQuest OSM': L.tileLayer.provider('MapQuestOpen.OSM'),
 			'MapQuest Aerial': L.tileLayer.provider('MapQuestOpen.Aerial'),
-			'MapBox Example': L.tileLayer.provider('MapBox.examples.map-zr0njcqy'),
+			'MapBox Example': L.tileLayer.provider('MapBox', {id: 'mapbox.streets', accessToken: 'pk.eyJ1IjoiZ3V0ZW55ZSIsImEiOiJmNjJlMDNmYTUyMzNjMzQxZmY4Mzc1ZmFiYmExNjMxOSJ9.xgl1PBwQV9CtwW-usedrcQ'}),
 			'Stamen Toner': L.tileLayer.provider('Stamen.Toner'),
 			'Stamen Terrain': L.tileLayer.provider('Stamen.Terrain'),
 			'Stamen Watercolor': L.tileLayer.provider('Stamen.Watercolor'),
