@@ -4,12 +4,13 @@ L.Control.FullScreen = L.Control.extend({
 	options: {
 		position: 'topleft',
 		title: 'Full Screen',
+		titleCancel: 'Exit Full Screen',
 		forceSeparateButton: false,
 		forcePseudoFullscreen: false
 	},
 	
 	onAdd: function (map) {
-		var className = 'leaflet-control-zoom-fullscreen', container;
+		var className = 'leaflet-control-zoom-fullscreen', container, content = '';
 		
 		if (map.zoomControl && !this.options.forceSeparateButton) {
 			container = map.zoomControl._container;
@@ -17,20 +18,29 @@ L.Control.FullScreen = L.Control.extend({
 			container = L.DomUtil.create('div', 'leaflet-bar');
 		}
 		
-		this._createButton(this.options.title, className, container, this.toggleFullScreen, this);
+		if (this.options.content) {
+			content = this.options.content;
+		} else {
+			className += ' fullscreen-icon';
+		}
+
+		this._createButton(this.options.title, className, content, container, this.toggleFullScreen, this);
+
+		this._map.on('enterFullscreen exitFullscreen', this._toggleTitle, this);
 
 		return container;
 	},
 	
-	_createButton: function (title, className, container, fn, context) {
-		var link = L.DomUtil.create('a', className, container);
-		link.href = '#';
-		link.title = title;
+	_createButton: function (title, className, content, container, fn, context) {
+		this.link = L.DomUtil.create('a', className, container);
+		this.link.href = '#';
+		this.link.title = title;
+		this.link.innerHTML = content;
 
 		L.DomEvent
-			.addListener(link, 'click', L.DomEvent.stopPropagation)
-			.addListener(link, 'click', L.DomEvent.preventDefault)
-			.addListener(link, 'click', fn, context);
+			.addListener(this.link, 'click', L.DomEvent.stopPropagation)
+			.addListener(this.link, 'click', L.DomEvent.preventDefault)
+			.addListener(this.link, 'click', fn, context);
 		
 		L.DomEvent
 			.addListener(container, fullScreenApi.fullScreenEventName, L.DomEvent.stopPropagation)
@@ -42,7 +52,7 @@ L.Control.FullScreen = L.Control.extend({
 			.addListener(document, fullScreenApi.fullScreenEventName, L.DomEvent.preventDefault)
 			.addListener(document, fullScreenApi.fullScreenEventName, this._handleEscKey, context);
 
-		return link;
+		return this.link;
 	},
 	
 	toggleFullScreen: function () {
@@ -69,6 +79,10 @@ L.Control.FullScreen = L.Control.extend({
 			map.fire('enterFullscreen');
 			map._isFullscreen = true;
 		}
+	},
+	
+	_toggleTitle: function() {
+		this.link.title = this._map._isFullscreen ? this.options.title : this.options.titleCancel;
 	},
 	
 	_handleEscKey: function () {

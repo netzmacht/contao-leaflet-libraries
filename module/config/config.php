@@ -65,7 +65,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
 (
     'name'       => 'Leaflet.Control.FullScreen',
-    'version'    => '1.1.4',
+    'version'    => '1.3.0',
     'license'    => '<a href="https://github.com/brunob/leaflet.fullscreen/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/brunob/leaflet.fullscreen',
     'css'        => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.css',
