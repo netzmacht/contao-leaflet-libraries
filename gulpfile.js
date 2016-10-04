@@ -32,7 +32,7 @@ var paths = [
     }
 ];
 
-gulp.task('clear-styles', function(cb) {
+gulp.task('clear-styles', function() {
     var i, clear = [];
     
     for (i = 0; i < paths.length; i++) {
@@ -41,10 +41,10 @@ gulp.task('clear-styles', function(cb) {
         }
     }
 
-    del(clear, cb);
+    del(clear);
 });
 
-gulp.task('clear-scripts', function(cb) {
+gulp.task('clear-scripts', function() {
     var i, clear = [];
 
     for (i = 0; i < paths.length; i++) {
@@ -53,7 +53,7 @@ gulp.task('clear-scripts', function(cb) {
         }
     }
 
-    del(clear, cb);
+    del(clear);
 });
 
 gulp.task('scripts', ['clear-scripts'], function() {

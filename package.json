@@ -1,0 +1,35 @@
+{
+  "name": "contao-leaflet-libaries",
+  "version": "0.7.7",
+  "description": "Libraries for Leaflet integration into Contao CMS =================================================",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-replace": "^0.5.4",
+    "gulp-uglify": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "merge-stream": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/netzmacht/contao-leaflet-libaries.git"
+  },
+  "keywords": [
+    "Leaflet",
+    "Contao",
+    "Libraries"
+  ],
+  "author": "netzmacht David Molineus",
+  "license": "LGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/netzmacht/contao-leaflet-libaries/issues"
+  },
+  "homepage": "https://github.com/netzmacht/contao-leaflet-libaries#readme"
+}
