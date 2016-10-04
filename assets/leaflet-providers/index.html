@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<!-- Leaflet style. REQUIRED! -->
-	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.css" />
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.css" />
 	<style>
 		html { height: 100% }
 		body { height: 100%; margin: 0; padding: 0;}
@@ -26,7 +26,7 @@
 	</div>
 	<div id="map" class="map"></div>
 
-	<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.3/leaflet.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/leaflet/1.0.0-rc.1/leaflet.js"></script>
 	<script src="leaflet-providers.js"></script>
 	<script>
 		var map = L.map('map', {
@@ -46,8 +46,6 @@
 			'Thunderforest Transport': L.tileLayer.provider('Thunderforest.Transport'),
 			'Thunderforest Landscape': L.tileLayer.provider('Thunderforest.Landscape'),
 			'Hydda Full': L.tileLayer.provider('Hydda.Full'),
-			'MapQuest OSM': L.tileLayer.provider('MapQuestOpen.OSM'),
-			'MapQuest Aerial': L.tileLayer.provider('MapQuestOpen.Aerial'),
 			'MapBox Example': L.tileLayer.provider('MapBox', {id: 'mapbox.streets', accessToken: 'pk.eyJ1IjoiZ3V0ZW55ZSIsImEiOiJmNjJlMDNmYTUyMzNjMzQxZmY4Mzc1ZmFiYmExNjMxOSJ9.xgl1PBwQV9CtwW-usedrcQ'}),
 			'Stamen Toner': L.tileLayer.provider('Stamen.Toner'),
 			'Stamen Terrain': L.tileLayer.provider('Stamen.Terrain'),
@@ -61,8 +59,7 @@
 			'Esri WorldPhysical': L.tileLayer.provider('Esri.WorldPhysical'),
 			'Esri OceanBasemap': L.tileLayer.provider('Esri.OceanBasemap'),
 			'Esri NatGeoWorldMap': L.tileLayer.provider('Esri.NatGeoWorldMap'),
-			'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas'),
-			'Acetate': L.tileLayer.provider('Acetate')
+			'Esri WorldGrayCanvas': L.tileLayer.provider('Esri.WorldGrayCanvas')
 		};
 
 		var overlayLayers = {
@@ -80,10 +77,10 @@
 			'OpenWeatherMap Snow': L.tileLayer.provider('OpenWeatherMap.Snow')
 		};
 
-		var layerControl = L.control.layers(baseLayers, overlayLayers, {collapsed: false}).addTo(map);
+		L.control.layers(baseLayers, overlayLayers, {collapsed: false}).addTo(map);
 
 		// resize layers control to fit into view.
-		function resizeLayerControl() {
+		function resizeLayerControl () {
 			var layerControlHeight = document.body.clientHeight - (10 + 50);
 			var layerControl = document.getElementsByClassName('leaflet-control-layers-expanded')[0];
 
