@@ -85,7 +85,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['spin.js'] = array
 (
     'name'       => 'spin.js',
-    'version'    => '2.3.1',
+    'version'    => '2.3.2',
     'license'    => '<a href="https://github.com/fgnass/spin.js/blob/master/LICENSE.txt" target="_blank">MIT</a>',
     'homepage'   => 'http://fgnass.github.io/spin.js',
     'javascript' => 'assets/leaflet/libs/spin-js/spin.min.js'
