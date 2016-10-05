@@ -17,7 +17,7 @@
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet'] = array
 (
     'name'       => 'Leaflet',
-    'version'    => '0.7.7',
+    'version'    => '1.0.1',
     'license'    => '<a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leafletjs.com',
     'css'        => 'assets/leaflet/libs/leaflet/leaflet.min.css',
@@ -45,7 +45,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
 (
     'name'       => 'Leaflet.markercluster',
-    'version'    => '0.4.0-hotfix.1',
+    'version'    => '1.0.0',
     'license'    => '<a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/Leaflet/Leaflet.markercluster',
     'css'        => 'assets/leaflet/libs/leaflet-markercluster/MarkerCluster.css',
