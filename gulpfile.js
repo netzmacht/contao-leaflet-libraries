@@ -29,6 +29,10 @@ var paths = [
         dest: 'assets/leaflet-fullscreen',
         css:  'Control.FullScreen.css',
         js:   'Control.FullScreen.js'
+    },
+    {
+        dest: 'assets/leaflet-layer-overpass',
+        css:  'OverPassLayer.css'
     }
 ];
 

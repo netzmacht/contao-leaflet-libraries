@@ -72,6 +72,16 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.js'
 );
 
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-layer-overpass'] = array
+(
+    'name'       => 'Leaflet Layer OverPass',
+    'version'    => '1.0.2',
+    'license'    => '<a href="https://github.com/kartenkarsten/leaflet-layer-overpass/blob/master/LICENSE" target="_blank">License</a>',
+    'homepage'   => 'https://github.com/kartenkarsten/leaflet-layer-overpass',
+    'css'        => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.min.js'
+);
+
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 (
     'name'       => 'Leaflet Control Geocoder',
