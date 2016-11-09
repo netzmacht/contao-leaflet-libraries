@@ -78,7 +78,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-layer-overpass'] = array
     'version'    => '1.0.2',
     'license'    => '<a href="https://github.com/kartenkarsten/leaflet-layer-overpass/blob/master/LICENSE" target="_blank">License</a>',
     'homepage'   => 'https://github.com/kartenkarsten/leaflet-layer-overpass',
-    'css'        => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.css',
+    'css'        => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.min.css',
     'javascript' => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.min.js'
 );
 
