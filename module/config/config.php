@@ -88,8 +88,8 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-extra-markers'] = array
     'version'    => '1.0.6',
     'license'    => '<a href="https://github.com/coryasilva/Leaflet.ExtraMarkers/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/coryasilva/Leaflet.ExtraMarkers',
-    'css'        => 'assets/leaflet/libs/control-extra-marker/leaflet.extra-markers.min.css',
-    'javascript' => 'assets/leaflet/libs/control-extra-marker/leaflet.extra-markers.min.js'
+    'css'        => 'assets/leaflet/libs/leaflet-extra-markers/css/leaflet.extra-markers.min.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-extra-markers/js/leaflet.extra-markers.min.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['osmtogeojson'] = array
