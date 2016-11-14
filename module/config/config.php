@@ -21,7 +21,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet'] = array
     'license'    => '<a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leafletjs.com',
     'css'        => 'assets/leaflet/libs/leaflet/leaflet.min.css',
-    'javascript' => 'assets/leaflet/libs/leaflet/leaflet.js',
+    'javascript' => 'assets/leaflet/libs/leaflet/leaflet-src.js',
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
@@ -80,6 +80,25 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
     'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
     'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.css',
     'javascript' => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.js'
+);
+
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-extra-markers'] = array
+(
+    'name'       => 'Leaflet Extra Markers',
+    'version'    => '1.0.6',
+    'license'    => '<a href="https://github.com/coryasilva/Leaflet.ExtraMarkers/blob/master/LICENSE" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/coryasilva/Leaflet.ExtraMarkers',
+    'css'        => 'assets/leaflet/libs/leaflet-extra-markers/css/leaflet.extra-markers.min.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-extra-markers/js/leaflet.extra-markers.min.js'
+);
+
+$GLOBALS['LEAFLET_LIBRARIES']['osmtogeojson'] = array
+(
+    'name'       => 'osmtogeojson',
+    'version'    => '2.2.12',
+    'license'    => '<a href="https://github.com/tyrasd/osmtogeojson/blob/gh-pages/LICENSE" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/tyrasd/osmtogeojson',
+    'javascript' => 'assets/leaflet/libs/osmtogeojson/osmtogeojson.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['spin.js'] = array
