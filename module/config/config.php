@@ -21,7 +21,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet'] = array
     'license'    => '<a href="https://github.com/Leaflet/Leaflet/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'http://leafletjs.com',
     'css'        => 'assets/leaflet/libs/leaflet/leaflet.min.css',
-    'javascript' => 'assets/leaflet/libs/leaflet/leaflet.js',
+    'javascript' => 'assets/leaflet/libs/leaflet/leaflet-src.js',
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
@@ -72,16 +72,6 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-fullscreen/Control.FullScreen.min.js'
 );
 
-$GLOBALS['LEAFLET_LIBRARIES']['leaflet-layer-overpass'] = array
-(
-    'name'       => 'Leaflet Layer OverPass',
-    'version'    => '1.0.2',
-    'license'    => '<a href="https://github.com/kartenkarsten/leaflet-layer-overpass/blob/master/LICENSE" target="_blank">License</a>',
-    'homepage'   => 'https://github.com/kartenkarsten/leaflet-layer-overpass',
-    'css'        => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.min.css',
-    'javascript' => 'assets/leaflet/libs/leaflet-layer-overpass/OverPassLayer.min.js'
-);
-
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 (
     'name'       => 'Leaflet Control Geocoder',
@@ -90,6 +80,15 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
     'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
     'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.css',
     'javascript' => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.js'
+);
+
+$GLOBALS['LEAFLET_LIBRARIES']['osmtogeojson'] = array
+(
+    'name'       => 'osmtogeojson',
+    'version'    => '2.2.12',
+    'license'    => '<a href="https://github.com/tyrasd/osmtogeojson/blob/gh-pages/LICENSE" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/tyrasd/osmtogeojson',
+    'javascript' => 'assets/leaflet/libs/osmtogeojson/osmtogeojson.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['spin.js'] = array
