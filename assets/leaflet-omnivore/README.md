@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.org/mapbox/leaflet-omnivore.svg)](https://travis-ci.org/mapbox/leaflet-omnivore)
-
 # leaflet-omnivore
 
 ![](https://farm8.staticflickr.com/7373/12376158164_e335b4e61d_b.jpg)
@@ -24,7 +22,7 @@ so you can specify what you want to add to the map with just a URL.
 use it easily with the [Mapbox Plugins CDN](http://mapbox.com/mapbox.js/plugins/#leaflet-omnivore):
 
 ```html
-<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.2.0/leaflet-omnivore.min.js'></script>
+<script src='//api.tiles.mapbox.com/mapbox.js/plugins/leaflet-omnivore/v0.3.1/leaflet-omnivore.min.js'></script>
 ```
 
 
@@ -43,7 +41,7 @@ Live examples:
 * [CSV](https://www.mapbox.com/mapbox.js/example/v1.0.0/markers-from-csv/)
 
 ```js
-var map = L.mapbox.map('map', 'examples.map-9ijuk24y')
+var map = L.mapbox.map('map', 'mapbox.streets')
     .setView([38, -102.0], 5);
 
 omnivore.csv('a.csv').addTo(map);
