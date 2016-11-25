@@ -33,15 +33,6 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-providers/leaflet-providers.min.js'
 );
 
-$GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
-(
-    'name'       => 'Leaflet-omnivore',
-    'version'    => '0.3.4',
-    'license'    => '<a href="https://github.com/mapbox/leaflet-omnivore/blob/master/LICENSE" target="_blank">BSD</a>',
-    'homepage'   => 'https://github.com/mapbox/leaflet-omnivore',
-    'javascript' => 'assets/leaflet/libs/leaflet-omnivore/leaflet-omnivore.min.js'
-);
-
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
 (
     'name'       => 'Leaflet.markercluster',
@@ -50,6 +41,15 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
     'homepage'   => 'https://github.com/Leaflet/Leaflet.markercluster',
     'css'        => 'assets/leaflet/libs/leaflet-markercluster/MarkerCluster.css',
     'javascript' => 'assets/leaflet/libs/leaflet-markercluster/leaflet.markercluster.js'
+);
+
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-omnivore'] = array
+(
+    'name'       => 'Leaflet-omnivore',
+    'version'    => '0.3.4',
+    'license'    => '<a href="https://github.com/mapbox/leaflet-omnivore/blob/master/LICENSE" target="_blank">BSD</a>',
+    'homepage'   => 'https://github.com/mapbox/leaflet-omnivore',
+    'javascript' => 'assets/leaflet/libs/leaflet-omnivore/leaflet-omnivore.min.js'
 );
 
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-loading'] = array
