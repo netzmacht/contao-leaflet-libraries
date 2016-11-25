@@ -1,12 +1,17 @@
 {
   "name": "leaflet-control-geocoder",
-  "version": "1.1.0",
+  "version": "1.5.4",
   "homepage": "https://github.com/perliedman/leaflet-control-geocoder",
   "authors": [
     "Per Liedman <per@liedman.net>"
   ],
   "description": "Extendable geocoder with builtin OSM/Nominatim support",
-  "main": "Control.Geocoder.js",
+  "main": [
+    "Control.Geocoder.js",
+    "Control.Geocoder.css",
+    "images/geocoder.png",
+    "images/throbber.gif"
+  ],
   "moduleType": [
     "amd",
     "globals"
@@ -14,7 +19,16 @@
   "keywords": [
     "leaflet",
     "geocoder",
-    "nominatim"
+    "locations",
+    "nominatim",
+    "bing",
+    "google",
+    "mapbox",
+    "photon",
+    "what3words",
+    "mapquest",
+    "mapzen",
+    "here"
   ],
   "license": "BSD-2-Clause",
   "ignore": [
@@ -23,8 +37,5 @@
     "bower_components",
     "test",
     "tests"
-  ],
-  "dependencies": {
-    "leaflet": "~0.7.2"
-  }
+  ]
 }
