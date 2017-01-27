@@ -33,9 +33,20 @@ You can install this package via composer.
 $ php composer.phar require netzmacht/contao-leaflet-libraries:~1.0 
 ```
 
-When releasing the first stable version of
-[netzmacht/contao-leaflet-maps](https://github.com/netzmacht/contao-leaflet-maps) the version number gonna be the same
-as the included leaflet library.
+If you use Contao 4 without the managed edition, you also have to register the module as a bundle.
+
+```php
+<?php
+
+  // Dependency is automatically installed and has to be registered
+  new Contao\CoreBundle\HttpKernel\Bundle\ContaoModuleBundle('leaflet-libs', $this->getRootDir()),
+```  
+
+Version numbers
+---------------
+
+Each release has is tagged with the main leaflet version which is shipped with this bundle. For any bugfix release which 
+is created without shipping a newer version of leaflet, this package uses four parts of the version number.
 
 License
 -------
