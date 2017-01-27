@@ -5,6 +5,8 @@ Provides Beautiful Animated Marker Clustering functionality for [Leaflet](http:/
 
 *Requires Leaflet 1.0.0*
 
+![cluster map example](example/map.png)
+
 For a Leaflet 0.7 compatible version, [use the leaflet-0.7 branch](https://github.com/Leaflet/Leaflet.markercluster/tree/leaflet-0.7)<br>
 For a Leaflet 0.5 compatible version, [Download b128e950](https://github.com/Leaflet/Leaflet.markercluster/archive/b128e950d8f5d7da5b60bd0aa9a88f6d3dd17c98.zip)<br>
 For a Leaflet 0.4 compatible version, [Download the 0.2 release](https://github.com/Leaflet/Leaflet.markercluster/archive/0.2.zip)
@@ -16,6 +18,8 @@ removed link to h1 and indented back 2 spaces all links.
 -->
 ## Table of Contents
   * [Using the plugin](#using-the-plugin)
+    * [Building, testing and linting scripts](#building-testing-and-linting-scripts)
+    * [Examples](#examples)
     * [Usage](#usage)
   * [Options](#options)
     * [Defaults](#defaults)
@@ -43,9 +47,23 @@ removed link to h1 and indented back 2 spaces all links.
 
 
 ## Using the plugin
+Include the plugin CSS and JS files on your page after Leaflet files, using your method of choice:
+* [Download the `v1.0.0` release](https://github.com/Leaflet/Leaflet.markercluster/archive/v1.0.0.zip)
+* Use unpkg CDN: `https://unpkg.com/leaflet.markercluster@1.0.0/dist/`
+* Install with npm: `npm install leaflet.markercluster`
 
-Install with npm: `npm install leaflet.markercluster`
+In each case, use files in the `dist` folder:
+* `MarkerCluster.css`
+* `MarkerCluster.Default.css` (not needed if you use your own `iconCreateFunction` instead of the default one)
+* `leaflet.markercluster.js` (or `leaflet.markercluster-src.js` for the non-minified version)
 
+### Building, testing and linting scripts
+Install jake `npm install -g jake` then run `npm install`
+* To check the code for errors and build Leaflet from source, run `jake`.
+* To run the tests, run `jake test`.
+* For a custom build, open `build/build.html` in the browser and follow the instructions
+
+### Examples
 See the included examples for usage.
 
 The [realworld example](http://leaflet.github.io/Leaflet.markercluster/example/marker-clustering-realworld.388.html) is a good place to start, it uses all of the defaults of the clusterer.
