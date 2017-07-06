@@ -3,11 +3,40 @@ Leaflet.markercluster
 
 (all changes without author notice are by [@danzel](https://github.com/danzel))
 
-## 1.0.2 (2016-01-27)
+## 1.0.6 (2017-06-19)
+
+### Bugfixes
+
+ * Fix some issues when used with non-integer zoom [#789](https://github.com/Leaflet/Leaflet.markercluster/issues/789)
+ * Change examples to use https (by [@ghybs](https://github.com/ghybs)) [#794](https://github.com/Leaflet/Leaflet.markercluster/pull/794)
+
+## 1.0.5 (2017-04-26)
 
 ### Improvements
 
- * Support `layeradd` and `layerremove` events [#647](https://github.com/Leaflet/Leaflet.markercluster/issues/647) 
+ * Allow passing fitBounds options to zoomToBounds (by [@timkelty](https://github.com/timkelty)) [#779](https://github.com/Leaflet/Leaflet.markercluster/pull/779)
+
+### Bugfixes
+
+ * Fixed bug where disableClusteringAtZoom being 0 is treated the same as null (by [@MrCheeze](https://github.com/MrCheeze)) [#773](https://github.com/Leaflet/Leaflet.markercluster/pull/773)
+
+## 1.0.4 (2017-03-14)
+
+### Bugfixes
+
+ * Fix errors removing a MarkerClusterGroup from the map during an animation [#758](https://github.com/Leaflet/Leaflet.markercluster/issues/758)
+
+## 1.0.3 (2017-02-02)
+
+### Bugfixes
+
+ * Fix moving markers while the MarkerClusterGroup is not on the map [#753](https://github.com/Leaflet/Leaflet.markercluster/issues/753)
+
+## 1.0.2 (2017-01-27)
+
+### Improvements
+
+ * Support `layeradd` and `layerremove` events [#647](https://github.com/Leaflet/Leaflet.markercluster/issues/647)
 
 ### Bugfixes
 
@@ -17,7 +46,7 @@ Leaflet.markercluster
  * If a marker is moved with an open popup on it, re-open the popup after moving it. [#651](https://github.com/Leaflet/Leaflet.markercluster/issues/651)
 
 
-## 1.0.1 (2016-01-25)
+## 1.0.1 (2017-01-25)
 
 ### Improvements
 
@@ -78,7 +107,7 @@ Leaflet.markercluster
  * Fix interaction between zoomOrSpiderfy and disableClusteringAtZoom (by [@ghybs](https://github.com/ghybs)) [#633](https://github.com/Leaflet/Leaflet.markercluster/issues/633) [#648](https://github.com/Leaflet/Leaflet.markercluster/issues/648)
 
 
-##0.4 (2013-12-19)
+## 0.4 (2013-12-19)
 
 ### Improvements
 
@@ -90,7 +119,7 @@ Leaflet.markercluster
  * Fix some cases zoomToShowLayer wouldn't work  (Reported by [@absemetov](https://github.com/absemetov)) [#203](https://github.com/Leaflet/Leaflet.markercluster/issues/203) [#228](https://github.com/Leaflet/Leaflet.markercluster/issues/228) [#286](https://github.com/Leaflet/Leaflet.markercluster/issues/286)
 
 
-##0.3 (2013-12-18)
+## 0.3 (2013-12-18)
 
 ### Improvements
 
