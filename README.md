@@ -18,7 +18,7 @@ This package contains following packages:
  - [Leaflet-omnivore 0.3.4](https://github.com/mapbox/leaflet-omnivore)
  - [Leaflet.loading 0.1.24](https://github.com/ebrelsford/Leaflet.loading)
  - [Leaflet.Control.FullScreen 1.4.3](https://github.com/brunob/leaflet.fullscreen)
- - [Leaflet Control Geocoder 1.5.4](https://github.com/perliedman/leaflet-control-geocoder)
+ - [Leaflet Control Geocoder 1.5.5](https://github.com/perliedman/leaflet-control-geocoder)
  - [Leaflet.ExtraMarkers 1.0.6](https://github.com/coryasilva/Leaflet.ExtraMarkers)
  - [osmtogeojson 2.2.12](https://github.com/tyrasd/osmtogeojson)
  - [spin.js 2.3.2](http://fgnass.github.io/spin.js)
