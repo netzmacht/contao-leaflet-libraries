@@ -36,7 +36,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-providers'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-markercluster'] = array
 (
     'name'       => 'Leaflet.markercluster',
-    'version'    => '1.0.6',
+    'version'    => '1.1.0',
     'license'    => '<a href="https://github.com/Leaflet/Leaflet.markercluster/blob/master/MIT-LICENCE.txt" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/Leaflet/Leaflet.markercluster',
     'css'        => 'assets/leaflet/libs/leaflet-markercluster/MarkerCluster.css',
