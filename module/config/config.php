@@ -92,6 +92,16 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-extra-markers'] = array
     'javascript' => 'assets/leaflet/libs/leaflet-extra-markers/js/leaflet.extra-markers.min.js'
 );
 
+$GLOBALS['LEAFLET_LIBRARIES']['leaflet-pm'] = array
+(
+    'name'       => 'leaflet.pm',
+    'version'    => '0.23.1',
+    'license'    => '<a href="https://github.com/codeofsumit/leaflet.pm/blob/develop/LICENSE" target="_blank">MIT</a>',
+    'homepage'   => 'https://github.com/codeofsumit/leaflet.pm',
+    'css'        => 'assets/leaflet/libs/leaflet-pm/leaflet.pm.css',
+    'javascript' => 'assets/leaflet/libs/leaflet-pm/leaflet.pm.min.js'
+);
+
 $GLOBALS['LEAFLET_LIBRARIES']['osmtogeojson'] = array
 (
     'name'       => 'osmtogeojson',

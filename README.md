@@ -20,6 +20,7 @@ This package contains following packages:
  - [Leaflet.Control.FullScreen 1.4.3](https://github.com/brunob/leaflet.fullscreen)
  - [Leaflet Control Geocoder 1.5.5](https://github.com/perliedman/leaflet-control-geocoder)
  - [Leaflet.ExtraMarkers 1.0.6](https://github.com/coryasilva/Leaflet.ExtraMarkers)
+ - [leaflet.pm 0.23.1](https://github.com/codeofsumit/leaflet.pm)
  - [osmtogeojson 2.2.12](https://github.com/tyrasd/osmtogeojson)
  - [spin.js 2.3.2](http://fgnass.github.io/spin.js)
 
@@ -52,4 +53,4 @@ License
 -------
 
 As this package is just a meta package to provide the libraries, the licenses of each library have to be accepted. They
-are unter the MIT or BSD license. 
+are under the MIT or BSD license. 
