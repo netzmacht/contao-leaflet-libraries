@@ -8,7 +8,7 @@ module.exports = {
 		options: {
 			showResultIcons: false,
 			collapsed: true,
-			expand: 'click',
+			expand: 'touch', // options: touch, click, anythingelse
 			position: 'topright',
 			placeholder: 'Search...',
 			errorMessage: 'Nothing found.',
@@ -17,7 +17,7 @@ module.exports = {
 			defaultMarkGeocode: true
 		},
 
-		includes: L.Mixin.Events,
+		includes: L.Evented.prototype || L.Mixin.Events,
 
 		initialize: function (options) {
 			L.Util.setOptions(this, options);
@@ -54,6 +54,9 @@ module.exports = {
 			L.DomEvent.disableClickPropagation(this._alts);
 
 			L.DomEvent.addListener(input, 'keydown', this._keydown, this);
+			if (this.options.geocoder.suggest) {
+				L.DomEvent.addListener(input, 'input', this._change, this);
+			}
 			L.DomEvent.addListener(input, 'blur', function() {
 				if (this.options.collapsed && !this._preventBlurCollapse) {
 					this._collapse();
@@ -64,22 +67,36 @@ module.exports = {
 
 			if (this.options.collapsed) {
 				if (this.options.expand === 'click') {
-					L.DomEvent.addListener(icon, 'click', function(e) {
-						// TODO: touch
+					L.DomEvent.addListener(container, 'click', function(e) {
 						if (e.button === 0 && e.detail !== 2) {
 							this._toggle();
 						}
 					}, this);
-				} else {
-					L.DomEvent.addListener(icon, 'mouseover', this._expand, this);
-					L.DomEvent.addListener(icon, 'mouseout', this._collapse, this);
+				}
+				else if (L.Browser.touch && this.options.expand === 'touch') {
+					L.DomEvent.addListener(container, 'touchstart mousedown', function(e) {
+						this._toggle();
+						e.preventDefault(); // mobile: clicking focuses the icon, so UI expands and immediately collapses
+						e.stopPropagation();
+					}, this);
+				}
+				else {
+					L.DomEvent.addListener(container, 'mouseover', this._expand, this);
+					L.DomEvent.addListener(container, 'mouseout', this._collapse, this);
 					this._map.on('movestart', this._collapse, this);
 				}
 			} else {
-				L.DomEvent.addListener(icon, 'click', function(e) {
-					this._geocode(e);
-				}, this);
 				this._expand();
+				if (L.Browser.touch) {
+					L.DomEvent.addListener(container, 'touchstart', function(e) {
+						this._geocode(e);
+					}, this);
+				}
+				else {
+					L.DomEvent.addListener(container, 'click', function(e) {
+						this._geocode(e);
+					}, this);
+				}
 			}
 
 			if (this.options.defaultMarkGeocode) {
@@ -151,15 +168,11 @@ module.exports = {
 		},
 
 		_geocodeResultSelected: function(result) {
-			if (!this.options.collapsed) {
-				this._clearResults();
-			}
-
 			this.fire('markgeocode', {geocode: result});
 		},
 
 		_toggle: function() {
-			if (this._container.className.indexOf('leaflet-control-geocoder-expanded') >= 0) {
+			if (L.DomUtil.hasClass(this._container, 'leaflet-control-geocoder-expanded')) {
 				this._collapse();
 			} else {
 				this._expand();
@@ -173,9 +186,10 @@ module.exports = {
 		},
 
 		_collapse: function () {
-			this._container.className = this._container.className.replace(' leaflet-control-geocoder-expanded', '');
+			L.DomUtil.removeClass(this._container, 'leaflet-control-geocoder-expanded');
 			L.DomUtil.addClass(this._alts, 'leaflet-control-geocoder-alternatives-minimized');
 			L.DomUtil.removeClass(this._errorElement, 'leaflet-control-geocoder-error');
+			this._input.blur(); // mobile: keyboard shouldn't stay expanded
 			this.fire('collapse');
 		},
 
@@ -188,21 +202,23 @@ module.exports = {
 		_createAlt: function(result, index) {
 			var li = L.DomUtil.create('li', ''),
 				a = L.DomUtil.create('a', '', li),
-			    icon = this.options.showResultIcons && result.icon ? L.DomUtil.create('img', '', a) : null,
-			    text = result.html ? undefined : document.createTextNode(result.name),
-			    mouseDownHandler = function mouseDownHandler(e) {
-			    	// In some browsers, a click will fire on the map if the control is
-			    	// collapsed directly after mousedown. To work around this, we
-			    	// wait until the click is completed, and _then_ collapse the
-			    	// control. Messy, but this is the workaround I could come up with
-			    	// for #142.
-			    	this._preventBlurCollapse = true;
+				icon = this.options.showResultIcons && result.icon ? L.DomUtil.create('img', '', a) : null,
+				text = result.html ? undefined : document.createTextNode(result.name),
+				mouseDownHandler = function mouseDownHandler(e) {
+					// In some browsers, a click will fire on the map if the control is
+					// collapsed directly after mousedown. To work around this, we
+					// wait until the click is completed, and _then_ collapse the
+					// control. Messy, but this is the workaround I could come up with
+					// for #142.
+					this._preventBlurCollapse = true;
 					L.DomEvent.stop(e);
 					this._geocodeResultSelected(result);
 					L.DomEvent.on(li, 'click', function() {
-			    		if (this.options.collapsed) {
-			    			this._collapse();
-			    		}
+						if (this.options.collapsed) {
+							this._collapse();
+						} else {
+							this._clearResults();
+						}
 					}, this);
 				};
 
@@ -221,7 +237,7 @@ module.exports = {
 			// Use mousedown and not click, since click will fire _after_ blur,
 			// causing the control to have collapsed and removed the items
 			// before the click can fire.
-			L.DomEvent.addListener(li, 'mousedown', mouseDownHandler, this);
+			L.DomEvent.addListener(li, 'mousedown touchstart', mouseDownHandler, this);
 
 			return li;
 		},
@@ -252,12 +268,10 @@ module.exports = {
 			// Up
 			case 38:
 				select(-1);
-				L.DomEvent.preventDefault(e);
 				break;
 			// Up
 			case 40:
 				select(1);
-				L.DomEvent.preventDefault(e);
 				break;
 			// Enter
 			case 13:
@@ -268,19 +282,19 @@ module.exports = {
 				} else {
 					this._geocode();
 				}
-				L.DomEvent.preventDefault(e);
 				break;
-			default:
-				var v = this._input.value;
-				if (this.options.geocoder.suggest && v !== this._lastGeocode) {
-					clearTimeout(this._suggestTimeout);
-					if (v.length >= this.options.suggestMinLength) {
-						this._suggestTimeout = setTimeout(L.bind(function() {
-							this._geocode(true);
-						}, this), this.options.suggestTimeout);
-					} else {
-						this._clearResults();
-					}
+			}
+		},
+		_change: function(e) {
+			var v = this._input.value;
+			if (v !== this._lastGeocode) {
+				clearTimeout(this._suggestTimeout);
+				if (v.length >= this.options.suggestMinLength) {
+					this._suggestTimeout = setTimeout(L.bind(function() {
+						this._geocode(true);
+					}, this), this.options.suggestTimeout);
+				} else {
+					this._clearResults();
 				}
 			}
 		}

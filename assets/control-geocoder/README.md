@@ -21,7 +21,7 @@ The plugin supports many different data providers:
 * [What3Words](http://what3words.com/)
 * [Photon](http://photon.komoot.de/)
 * [Mapzen Search](https://mapzen.com/projects/search)
-* [HERE Geocoder API] (https://developer.here.com/rest-apis/documentation/geocoder/topics/overview.html)
+* [HERE Geocoder API](https://developer.here.com/documentation/geocoder/topics/introduction.html)
 
 The plugin can easily be extended to support other providers. Current extensions:
 
@@ -94,6 +94,7 @@ L.Control.Geocoder(options)
 | Option          |  Type            |  Default          | Description |
 | --------------- | ---------------- | ----------------- | ----------- |
 | collapsed       |  Boolean         |  true             | Collapse control unless hovered/clicked |
+| expand          |  String          |  "touch"          | How to expand a collapsed control: `touch` `click` `hover` |
 | position        |  String          |  "topright"       | Control [position](http://leafletjs.com/reference.html#control-positions) |
 | placeholder     |  String          |  "Search..."      | Placeholder text for text input
 | errorMessage    |  String          |  "Nothing found." | Message when no result found / geocoding error occurs |

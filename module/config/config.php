@@ -75,7 +75,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-fullscreen'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 (
     'name'       => 'Leaflet Control Geocoder',
-    'version'    => '1.5.5',
+    'version'    => '1.5.8',
     'license'    => '<a href="https://github.com/perliedman/leaflet-control-geocoder/blob/master/LICENSE" target="_blank">BSD-2-Clause</a>',
     'homepage'   => 'https://github.com/perliedman/leaflet-control-geocoder',
     'css'        => 'assets/leaflet/libs/control-geocoder/Control.Geocoder.min.css',
