@@ -1,4 +1,4 @@
-# Leaflet.extra-markers plugin v1.0.4
+# Leaflet.extra-markers
 <a href="https://github.com/lvoogdt/Leaflet.awesome-markers">Big Thanks to lvoogdt of Leaflet.awesome-markers</a>
 
 ![ExtraMarkers screenshot](https://raw.github.com/coryasilva/Leaflet.ExtraMarkers/master/screenshot.png "Screenshot of ExtraMarkers")
@@ -48,7 +48,7 @@ Now use the plugin to create a marker like this:
     prefix: 'fa'
   });
 
-  L.marker([51.941196,4.512291], {icon: redMarker,}).addTo(map);
+  L.marker([51.941196,4.512291], {icon: redMarker}).addTo(map);
 ````
 ---
 
