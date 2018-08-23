@@ -20,7 +20,7 @@ This package contains following packages:
  - [Leaflet.Control.FullScreen 1.4.5](https://github.com/brunob/leaflet.fullscreen)
  - [Leaflet Control Geocoder 1.6.0](https://github.com/perliedman/leaflet-control-geocoder)
  - [Leaflet.ExtraMarkers 1.0.8](https://github.com/coryasilva/Leaflet.ExtraMarkers)
- - [leaflet.pm 0.23.1](https://github.com/codeofsumit/leaflet.pm)
+ - [leaflet.pm 0.25.0](https://github.com/codeofsumit/leaflet.pm)
  - [osmtogeojson 2.2.12](https://github.com/tyrasd/osmtogeojson)
  - [spin.js 2.3.2](http://fgnass.github.io/spin.js)
 

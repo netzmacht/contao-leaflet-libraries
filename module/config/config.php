@@ -95,7 +95,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-extra-markers'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-pm'] = array
 (
     'name'       => 'leaflet.pm',
-    'version'    => '0.23.1',
+    'version'    => '0.25.0',
     'license'    => '<a href="https://github.com/codeofsumit/leaflet.pm/blob/develop/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/codeofsumit/leaflet.pm',
     'css'        => 'assets/leaflet/libs/leaflet-pm/leaflet.pm.css',
