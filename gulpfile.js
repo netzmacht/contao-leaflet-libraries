@@ -4,7 +4,7 @@ var del       = require('del');
 var rename    = require('gulp-rename');
 var uglify    = require('gulp-uglify');
 var merge     = require('merge-stream');
-var minifyCss = require('gulp-minify-css');
+var minifyCss = require('gulp-clean-css');
 var replace   = require('gulp-replace');
 
 var paths = [
