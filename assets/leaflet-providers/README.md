@@ -2,22 +2,24 @@ Leaflet-providers
 =================
 An extension to [Leaflet](http://leafletjs.com/) that contains configurations for various free<sup>[1](#what-is-free)</sup> tile providers.
 
+# Installation
+
+Download [leaflet-providers.js](https://raw.githubusercontent.com/leaflet-extras/leaflet-providers/master/leaflet-providers.js) and include it in your page after including Leaflet, e.g.:
+
+    <head>
+      ...
+      <script src="http://unpkg.com/leaflet@1.3.1/dist/leaflet.js"></script>
+      <script src="js/leaflet-providers.js"></script>
+    </head>
+
 # Usage
+
 Leaflet-providers [providers](#providers) are refered to with a `provider[.<variant>]`-string. Let's say you want to add the nice [Watercolor](http://maps.stamen.com/#watercolor/) style from Stamen to your map, you pass `Stamen.Watercolor` to the `L.tileLayer.provider`-constructor, which will return a [L.TileLayer](http://leafletjs.com/reference.html#tilelayer) instance for Stamens Watercolor tile layer.
 
 ```Javascript
 // add Stamen Watercolor to map.
 L.tileLayer.provider('Stamen.Watercolor').addTo(map);
 ```
-
-## Protocol relativity (`https://`-urls)
-
-Leaflet-providers tries to use `https://` if the page uses `https://` and the provider supports it.
-You can force the use of `http://` by passing `force_http: true` in the options argument.
-
-## Retina tiles
-
-Some providers have retina tiles for which the URL only needs to be slightly adjusted, e.g. `-----@2x.png`. For this, add the retina option in the URL, e.g. `-----{retina}.png`, and set a retina value in the options, e.g. `retina: '@2x'`. If Leaflet detects a retina screen (`L.Browser.retina`), the retina option passed to the tileLayer is set to the value supplied, otherwise it's replaced by an empty string.
 
 # Providers
 
@@ -42,9 +44,19 @@ L.tileLayer.provider('HERE.terrainDay', {
 
 ### Mapbox
 
-In order to use Mapbox maps, you must [register](https://tiles.mapbox.com/signup). You can get map ID and ACCESS_TOKEN from [Mapbox projects](https://www.mapbox.com/projects):
+In order to use Mapbox maps, you must [register](https://tiles.mapbox.com/signup). You can get map_ID (i.e mapbox.satellite) and ACCESS_TOKEN from [Mapbox projects](https://www.mapbox.com/projects):
 ```JavaScript
-L.tileLayer.provider('MapBox', {id: 'ID', accessToken: 'ACCESS_TOKEN'}).addTo(map);
+L.tileLayer.provider('MapBox', {
+    id: 'ID': '<insert map_ID here>',
+    accessToken: '<insert ACCESS_TOKEN here>'
+}).addTo(map);
+```
+
+### Thunderforest
+
+In order to use Thunderforest maps, you must [register](https://thunderforest.com/pricing/). Once registered, you have an `api_key` which you have to pass to `L.tileLayer.provider` in the options:
+```JavaScript
+L.tileLayer.provider('Thunderforest.Landscape', {apikey: '<insert api_key here>'}).addTo(map);
 ```
 
 ### Esri/ArcGIS
@@ -52,6 +64,21 @@ L.tileLayer.provider('MapBox', {id: 'ID', accessToken: 'ACCESS_TOKEN'}).addTo(ma
 In order to use ArcGIS maps, you must [register](https://developers.arcgis.com/en/sign-up/) and abide by the [terms of service](https://developers.arcgis.com/en/terms/). No special syntax is required.
 
 [Available Esri layers](http://leaflet-extras.github.io/leaflet-providers/preview/#filter=Esri)
+
+### Geoportail France
+
+In order to use Geoportail France resources, you need to obtain an [api key]( http://professionnels.ign.fr/ign/contrats/) that allows you to access the [resources](https://geoservices.ign.fr/documentation/donnees-ressources-wmts.html#ressources-servies-en-wmts-en-projection-web-mercator) you need. Pass this api key and the ID of the resource to display to `L.tileLayer.provider` in the options: 
+```JavaScript
+L.tileLayer.provider('GeoportailFrance', {
+    variant: '<insert resource ID here>',
+    apikey: '<insert api key here>'
+}).addTo(map);
+```
+
+Please note that a public api key (`choisirgeoportail`) is used by default and comes with no guarantee. 
+
+4 aliases are also provided for common Geoportail resources : `GeoportailFrance`, `GeoportailFrance.orthos`, `GeoportailFrance.ignMaps` and `GeoportailFrance.parcels` (See index.html demo).
+
 
 # Attribution
 
