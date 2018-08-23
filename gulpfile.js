@@ -1,4 +1,5 @@
-var gulp      = require('gulp');
+const { series, parallel, src, dest } = require('gulp');
+
 var del       = require('del');
 var rename    = require('gulp-rename');
 var uglify    = require('gulp-uglify');
@@ -29,16 +30,12 @@ var paths = [
         dest: 'assets/leaflet-fullscreen',
         css:  'Control.FullScreen.css',
         js:   'Control.FullScreen.js'
-    },
-    {
-        dest: 'assets/leaflet-layer-overpass',
-        css:  'OverPassLayer.css'
     }
 ];
 
-gulp.task('clear-styles', function() {
+function clearStyles (cb) {
     var i, clear = [];
-    
+
     for (i = 0; i < paths.length; i++) {
         if (paths[i].css) {
             clear.push(paths[i].dest + '/*.min.css');
@@ -46,9 +43,11 @@ gulp.task('clear-styles', function() {
     }
 
     del(clear);
-});
 
-gulp.task('clear-scripts', function() {
+    cb();
+}
+
+function clearScripts (cb) {
     var i, clear = [];
 
     for (i = 0; i < paths.length; i++) {
@@ -58,45 +57,53 @@ gulp.task('clear-scripts', function() {
     }
 
     del(clear);
-});
 
-gulp.task('scripts', ['clear-scripts'], function() {
+    cb();
+}
+
+const scripts = series(clearScripts, function (cb) {
     var i, stream, streams = [];
 
     for (i = 0; i < paths.length; i++) {
         if (paths[i].js) {
-            stream = gulp.src(paths[i].dest + '/' + paths[i].js)
+            stream = src(paths[i].dest + '/' + paths[i].js)
                 .pipe(rename(function (path) {
                     path.basename += '.min';
                 }))
                 .pipe(uglify())
-                .pipe(gulp.dest(paths[i].dest));
+                .pipe(dest(paths[i].dest));
 
             streams.push(stream);
         }
     }
 
-    return merge.call(null, streams);
+    merge.call(null, streams);
+
+    cb();
 });
 
-gulp.task('styles', ['clear-styles'], function() {
+const styles = series(clearStyles, function (cb) {
     var i, stream, streams = [];
 
     for (i = 0; i < paths.length; i++) {
         if (paths[i].css) {
-            stream = gulp.src(paths[i].dest + '/' + paths[i].css)
+            stream = src(paths[i].dest + '/' + paths[i].css)
                 .pipe(rename(function (path) {
                     path.basename += '.min';
                 }))
                 .pipe(minifyCss())
                 .pipe(replace(/url\(([^"][^\)]+)\)/g, 'url(\'$1\')'))
-                .pipe(gulp.dest(paths[i].dest));
+                .pipe(dest(paths[i].dest));
 
             streams.push(stream);
         }
     }
 
-    return merge.call(null, streams);
-});
+    merge.call(null, streams);
 
-gulp.task('default', ['scripts', 'styles']);
+    cb();
+})
+
+exports.scripts = scripts;
+exports.styles  = styles;
+exports.default = parallel(scripts, styles);
