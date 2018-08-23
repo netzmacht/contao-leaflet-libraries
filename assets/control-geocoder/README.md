@@ -9,11 +9,11 @@ While I can't force anyone to do anything, if you happen to disagree with this, 
 Leaflet Control Geocoder [![NPM version](https://img.shields.io/npm/v/leaflet-control-geocoder.svg)](https://www.npmjs.com/package/leaflet-control-geocoder) ![Leaflet 1.0.0 compatible!](https://img.shields.io/badge/Leaflet%201.0.0-%E2%9C%93-1EB300.svg?style=flat)
 =============================
 
-A simple geocoder for [Leaflet](http://leafletjs.com/) that by default uses [OSM](http://www.openstreetmap.org/)/[Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim).
+A simple geocoder for [Leaflet](http://leafletjs.com/) that by default uses [OSM](https://www.openstreetmap.org/)/[Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim).
 
 The plugin supports many different data providers:
 
-* [OSM](http://www.openstreetmap.org/)/[Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim)
+* [OSM](https://www.openstreetmap.org/)/[Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim)
 * [Bing Locations API](http://msdn.microsoft.com/en-us/library/ff701715.aspx)
 * [Google Geocoding API](https://developers.google.com/maps/documentation/geocoding/)
 * [Mapbox Geocoding](https://www.mapbox.com/developers/api/geocoding/)
@@ -31,12 +31,11 @@ See the [Leaflet Control Geocoder Demo](http://perliedman.github.com/leaflet-con
 
 # Usage
 
-[Download latest release](https://github.com/perliedman/leaflet-control-geocoder/releases). Load the CSS and Javascript, located in
-the `dist` folder:
+[Download latest release](https://github.com/perliedman/leaflet-control-geocoder/releases), or obtain the latest release via [unpkg.com](https://unpkg.com/):
 
 ```HTML
-<link rel="stylesheet" href="Control.Geocoder.css" />
-<script src="Control.Geocoder.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.css" />
+<script src="https://unpkg.com/leaflet-control-geocoder/dist/Control.Geocoder.js"></script>
 ```
 
 Add the control to a map instance:
@@ -85,49 +84,55 @@ This is the geocoder control. It works like any other Leaflet control, and is ad
 
 ### Constructor
 
+This plugin supports the standard JavaScript constructor (to be invoked using `new`) as well as the [class factory methods](http://leafletjs.com/reference.html#class-class-factories) known from Leaflet:
+
 ```js
-L.Control.Geocoder(options)
+new L.Control.Geocoder(options)
+// or
+L.Control.geocoder(options)
 ```
 
 ### Options
 
-| Option          |  Type            |  Default          | Description |
-| --------------- | ---------------- | ----------------- | ----------- |
-| collapsed       |  Boolean         |  true             | Collapse control unless hovered/clicked |
-| expand          |  String          |  "touch"          | How to expand a collapsed control: `touch` `click` `hover` |
-| position        |  String          |  "topright"       | Control [position](http://leafletjs.com/reference.html#control-positions) |
-| placeholder     |  String          |  "Search..."      | Placeholder text for text input
-| errorMessage    |  String          |  "Nothing found." | Message when no result found / geocoding error occurs |
-| geocoder        |  IGeocoder       |  new L.Control.Geocoder.Nominatim() | Object to perform the actual geocoding queries |
-| showResultIcons |  Boolean         |  false            | Show icons for geocoding results (if available); supported by Nominatim |
+| Option            |  Type            |  Default            | Description |
+| ----------------- | ---------------- | ------------------- | ----------- |
+| `collapsed`       |  Boolean         |  `true`             | Collapse control unless hovered/clicked |
+| `expand`          |  String          |  `"touch"`          | How to expand a collapsed control: `touch` or `click` or `hover` |
+| `position`        |  String          |  `"topright"`       | Control [position](http://leafletjs.com/reference.html#control-positions) |
+| `placeholder`     |  String          |  `"Search..."`      | Placeholder text for text input
+| `errorMessage`    |  String          |  `"Nothing found."` | Message when no result found / geocoding error occurs |
+| `geocoder`        |  IGeocoder       |  `new L.Control.Geocoder.Nominatim()` | Object to perform the actual geocoding queries |
+| `showResultIcons` |  Boolean         |  `false`            | Show icons for geocoding results (if available); supported by Nominatim |
 
 ### Methods
 
 | Method                                |  Returns            | Description       |
 | ------------------------------------- | ------------------- | ----------------- |
-| markGeocode(<GeocodingResult> result) |  this               | Marks a geocoding result on the map |
+| `markGeocode(<GeocodingResult> result)` |  `this`               | Marks a geocoding result on the map |
 
 ## L.Control.Geocoder.Nominatim
 
-Uses [Nominatim](http://wiki.openstreetmap.org/wiki/Nominatim) to respond to geocoding queries. This is the default
+Uses [Nominatim](https://wiki.openstreetmap.org/wiki/Nominatim) to respond to geocoding queries. This is the default
 geocoding service used by the control, unless otherwise specified in the options. Implements ```IGeocoder```.
 
-Unless using your own Nominatim installation, please refer to the [Nominatim usage policy](http://wiki.openstreetmap.org/wiki/Nominatim_usage_policy).
+Unless using your own Nominatim installation, please refer to the [Nominatim usage policy](https://operations.osmfoundation.org/policies/nominatim/).
 
 ### Constructor
 
 ```js
-L.Control.Geocoder.Nominatim(options)
+new L.Control.Geocoder.Nominatim(options)
+// or
+L.Control.Geocoder.nominatim(options)
 ```
 
 ## Options
 
 | Option          |  Type            |  Default          | Description |
 | --------------- | ---------------- | ----------------- | ----------- |
-| serviceUrl       | String          |  "http://nominatim.openstreetmap.org/" | URL of the service |
-| geocodingQueryParams       | Object          |  {} | Additional URL parameters (strings) that will be added to geocoding requests; can be used to restrict results to a specific country for example, by providing the [`countrycodes`](http://wiki.openstreetmap.org/wiki/Nominatim#Parameters) parameter to Nominatim |
-| reverseQueryParams       | Object          |  {} | Additional URL parameters (strings) that will be added to reverse geocoding requests |
-| htmlTemplate     | function        | special           | A function that takes an GeocodingResult as argument and returns an HTML formatted string that represents the result. Default function breaks up address in parts from most to least specific, in attempt to increase readability compared to Nominatim's naming
+| `serviceUrl`       | String          |  `"https://nominatim.openstreetmap.org/"` | URL of the service |
+| `geocodingQueryParams`       | Object          |  `{}` | Additional URL parameters (strings) that will be added to geocoding requests; can be used to restrict results to a specific country for example, by providing the [`countrycodes`](https://wiki.openstreetmap.org/wiki/Nominatim#Parameters) parameter to Nominatim |
+| `reverseQueryParams`       | Object          |  `{}` | Additional URL parameters (strings) that will be added to reverse geocoding requests |
+| `htmlTemplate`     | function        | special           | A function that takes an GeocodingResult as argument and returns an HTML formatted string that represents the result. Default function breaks up address in parts from most to least specific, in attempt to increase readability compared to Nominatim's naming
 
 ## L.Control.Geocoder.Bing
 
@@ -137,8 +142,10 @@ Note that you need an API key to use this service.
 
 ### Constructor
 
-```
-L.Control.Geocoder.Bing(<String> key)
+```ts
+new L.Control.Geocoder.Bing(<String> key)
+// or
+L.Control.Geocoder.bing(<String> key)
 ```
 
 ## IGeocoder
@@ -149,8 +156,8 @@ An interface implemented to respond to geocoding queries.
 
 | Method                                |  Returns            | Description       |
 | ------------------------------------- | ------------------- | ----------------- |
-| geocode(<String> query, callback, context) | GeocodingResult[] | Performs a geocoding query and returns the results to the callback in the provided context |
-| reverse(<L.LatLng> location, <Number> scale, callback, context) | GeocodingResult[] | Performs a reverse geocoding query and returns the results to the callback in the provided context |
+| `geocode(<String> query, callback, context)` | `GeocodingResult[]` | Performs a geocoding query and returns the results to the callback in the provided context |
+| `reverse(<L.LatLng> location, <Number> scale, callback, context)` | `GeocodingResult[]` | Performs a reverse geocoding query and returns the results to the callback in the provided context |
 
 ## GeocodingResult
 
@@ -158,10 +165,10 @@ An object that represents a result from a geocoding query.
 
 ### Properties
 
-| Property   | Type             | Description                           |
-| ---------- | ---------------- | ------------------------------------- |
-| name       | String           | Name of found location                |
-| bbox       | L.LatLngBounds   | The bounds of the location            |
-| center     | L.LatLng         | The center coordinate of the location |
-| icon       | String           | URL for icon representing result; optional |
-| html       | String           | (optional) HTML formatted representation of the name |
+| Property     | Type             | Description                           |
+| ------------ | ---------------- | ------------------------------------- |
+| `name`       | String           | Name of found location                |
+| `bbox`       | L.LatLngBounds   | The bounds of the location            |
+| `center`     | L.LatLng         | The center coordinate of the location |
+| `icon`       | String           | URL for icon representing result; optional |
+| `html`       | String           | (optional) HTML formatted representation of the name |
