@@ -1,5 +1,5 @@
 /*
- * Leaflet.markercluster 1.3.0+master.5b36e91,
+ * Leaflet.markercluster 1.4.0+master.458cf75,
  * Provides Beautiful Animated Marker Clustering functionality for Leaflet, a JS library for interactive maps.
  * https://github.com/Leaflet/Leaflet.markercluster
  * (c) 2012-2017, Dave Leaver, smartrak
@@ -428,6 +428,7 @@ var MarkerClusterGroup = L.MarkerClusterGroup = L.FeatureGroup.extend({
 		//If we aren't on the map (yet), blow away the markers we know of
 		if (!this._map) {
 			this._needsClustering = [];
+			this._needsRemoving = [];
 			delete this._gridClusters;
 			delete this._gridUnclustered;
 		}
@@ -1769,6 +1770,9 @@ var MarkerCluster = L.MarkerCluster = L.Marker.extend({
 		if (zoom < zoomLevelToStart || zoom < zoomLevelToStop) {
 			for (i = childClusters.length - 1; i >= 0; i--) {
 				c = childClusters[i];
+				if (c._boundsNeedUpdate) {
+					c._recalculateBounds();
+				}
 				if (boundsToApplyTo.intersects(c._bounds)) {
 					c._recursively(boundsToApplyTo, zoomLevelToStart, zoomLevelToStop, runAtEveryLevel, runAtBottomLevel);
 				}
@@ -1787,24 +1791,21 @@ var MarkerCluster = L.MarkerCluster = L.Marker.extend({
 * Extends L.Marker to include two extra methods: clusterHide and clusterShow.
 * 
 * They work as setOpacity(0) and setOpacity(1) respectively, but
-* they will remember the marker's opacity when hiding and showing it again.
+* don't overwrite the options.opacity
 * 
 */
 
-
 L.Marker.include({
-	
 	clusterHide: function () {
-		this.options.opacityWhenUnclustered = this.options.opacity || 1;
-		return this.setOpacity(0);
+		var backup = this.options.opacity;
+		this.setOpacity(0);
+		this.options.opacity = backup;
+		return this;
 	},
 	
 	clusterShow: function () {
-		var ret = this.setOpacity(this.options.opacity || this.options.opacityWhenUnclustered);
-		delete this.options.opacityWhenUnclustered;
-		return ret;
+		return this.setOpacity(this.options.opacity);
 	}
-	
 });
 
 L.DistanceGrid = function (cellSize) {
