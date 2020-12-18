@@ -85,7 +85,7 @@ $GLOBALS['LEAFLET_LIBRARIES']['leaflet-control-geocoder'] = array
 $GLOBALS['LEAFLET_LIBRARIES']['leaflet-extra-markers'] = array
 (
     'name'       => 'Leaflet Extra Markers',
-    'version'    => '1.0.8',
+    'version'    => '1.2.1',
     'license'    => '<a href="https://github.com/coryasilva/Leaflet.ExtraMarkers/blob/master/LICENSE" target="_blank">MIT</a>',
     'homepage'   => 'https://github.com/coryasilva/Leaflet.ExtraMarkers',
     'css'        => 'assets/leaflet/libs/leaflet-extra-markers/css/leaflet.extra-markers.min.css',

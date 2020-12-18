@@ -1,8 +1,8 @@
 {
-  "name": "Leaflet.extra-markers",
+  "name": "leaflet-extra-markers",
   "title": "Leaflet ExtraMarkers",
   "url": "https://github.com/coryasilva/Leaflet.ExtraMarkers/",
-  "version": "1.0.8",
+  "version": "1.2.1",
   "description": "Custom Markers for Leaflet JS based on Awesome Markers",
   "author": "coryasilva <https://github.com/coryasilva>",
   "repository": {
@@ -11,18 +11,22 @@
   },
   "main": "dist/js/leaflet.extra-markers.js",
   "types": "dist/leaflet.extra-markers.d.ts",
+  "scripts": {
+    "start": "grunt",
+    "build": "grunt build"
+  },
   "peerDependencies": {
     "leaflet": ">= 0.5 < 2"
   },
   "devDependencies": {
-    "git-rev-sync": "^1.10.0",
-    "grunt": "^1.0.2",
+    "git-rev-sync": "^1.12.0",
+    "grunt": "^1.0.4",
     "grunt-contrib-jshint": "^1.1.0",
     "grunt-contrib-less": "^1.4.1",
-    "grunt-contrib-uglify": "^3.3.0",
+    "grunt-contrib-uglify": "^3.4.0",
     "grunt-rollup": "^9.0.0",
     "less-plugin-autoprefix": "^1.5.1",
-    "rollup-plugin-git-version": "^0.2.1",
+    "rollup-plugin-git-version": "^0.3.1",
     "time-grunt": "^1.4.0"
   }
 }
