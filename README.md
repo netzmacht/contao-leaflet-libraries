@@ -12,7 +12,7 @@ Contao CMS.
 
 This package contains following packages:
 
- - [leaflet 1.3.4](http://leafletjs.com)
+ - [leaflet 1.7.1](http://leafletjs.com)
  - [Leaflet-providers 1.3.1](http://leaflet-extras.github.io/leaflet-providers)
  - [Leaflet.markercluster 1.4.0](https://github.com/Leaflet/Leaflet.markercluster)
  - [Leaflet-omnivore 0.3.4](https://github.com/mapbox/leaflet-omnivore)
