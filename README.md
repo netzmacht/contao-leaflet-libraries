@@ -14,7 +14,7 @@ This package contains following packages:
 
  - [leaflet 1.7.1](http://leafletjs.com)
  - [Leaflet-providers 1.3.1](http://leaflet-extras.github.io/leaflet-providers)
- - [Leaflet.markercluster 1.4.0](https://github.com/Leaflet/Leaflet.markercluster)
+ - [Leaflet.markercluster 1.4.1](https://github.com/Leaflet/Leaflet.markercluster)
  - [Leaflet-omnivore 0.3.4](https://github.com/mapbox/leaflet-omnivore)
  - [Leaflet.loading 0.1.24](https://github.com/ebrelsford/Leaflet.loading)
  - [Leaflet.Control.FullScreen 1.4.5](https://github.com/brunob/leaflet.fullscreen)
