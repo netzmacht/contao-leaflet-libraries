@@ -18,9 +18,8 @@
         "source":"https://github.com/netzmacht/contao-leaflet-libraries"
     },
     "require":{
-        "php":">=5.4",
-        "contao-community-alliance/composer-plugin": "~2.4 || ~3.0",
-        "contao/core-bundle":"~3.5 || ~4.3"
+        "php":"^7.4 || ^8.0",
+        "contao/core-bundle":"^4.13 || ^5.0"
     },
     "suggest": {
         "netzmacht/contao-leaflet-maps": "Leaflet maps integration into Contao CMS"
